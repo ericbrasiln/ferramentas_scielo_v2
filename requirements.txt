@@ -1,0 +1,5 @@
+bs4==0.0.1
+pandas==1.0.5
+selenium==3.141.0
+webdriver-manager==3.2.2
+wget==3.2
