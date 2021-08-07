@@ -2,9 +2,19 @@
 
 # ferramentas_scielo
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![DOI](https://zenodo.org/badge/380107112.svg)](https://zenodo.org/badge/latestdoi/380107112) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
->Esse repositório é parte dos projetos desenvolvidos pelos membros do [LABHDUFBA](http://labhd.ufba.br/) e tem como objetivo oferecer ferramentas de raspagem, organização e análise de artigos ciêntíficos publicados na plataforma [Scielo.br](https://www.scielo.br/scielo.php?script=sci_home&lng=pt&nrm=iso).
+>Esse repositório é parte dos projetos desenvolvidos pelos membros do [LABHDUFBA](http://labhd.ufba.br/) e tem como objetivo oferecer ferramentas de raspagem, organização e análise de artigos ciêntíficos publicados na plataforma [Scielo.br](https://www.scielo.br/).
+
+Atualização completa para nova versão do Scielo.br
+
+Nessa versão do programa, reconstruímos o código para lidar com a nova versão do repositório [Scielo.br](https://www.scielo.br/).
+
+Agora, utilizamos o Selenium para acessar e raspar os dados do repositório.
+
+Ainda é possível optar realizar a raspagem por área do conhecimento ou por revista (ou uma lista de revistas). Nessa última opção é preciso fornecer a abreviação do nome da revista conforme o site do Scielo.br.
+
+---
 
 ## Instalação
 
