@@ -1,10 +1,21 @@
 <p align="center"><img src="img/labhd.png" height="256" width="256"/></p>
 
 # Ferramentas Scielo v2 
-
-
-
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5168728.svg)](https://doi.org/10.5281/zenodo.5168728) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+
+## Índice
+- [Ferramentas Scielo v2](#ferramentas-scielo-v2)
+  - [Índice](#índice)
+  - [Introdução](#introdução)
+  - [Instalação](#instalação)
+    - [Python](#python)
+  - [scielo_v2.py](#scielo_v2py)
+  - [scielo_rev_v2.py](#scielo_rev_v2py)
+  - [:warning: Atenção](#warning-atenção)
+  - [Como citar?](#como-citar)
+  - [Licença](#licença)
+
+## Introdução
 
 >Esse repositório é parte dos projetos desenvolvidos pelos membros do [LABHDUFBA](http://labhd.ufba.br/) e tem como objetivo oferecer ferramentas de raspagem, organização e análise de artigos ciêntíficos publicados na plataforma [Scielo.br](https://www.scielo.br/).
 
@@ -14,7 +25,7 @@ Nessa versão do programa, reconstruímos o código para lidar com a nova versã
 
 Agora, utilizamos o Selenium para acessar e raspar os dados do repositório.
 
-Ainda é possível optar realizar a raspagem por área do conhecimento ou por revista (ou uma lista de revistas). Nessa última opção é preciso fornecer a abreviação do nome da revista conforme o site do Scielo.br.
+Ainda é possível optar realizar a raspagem por área do conhecimento ou [por revista (ou uma lista de revistas)](#scielo_rev_v2py). Nessa última opção é preciso fornecer a abreviação do nome da revista conforme o site do Scielo.br.
 
 ---
 
@@ -98,6 +109,24 @@ Ambos os scripts criarão diretórios para armazenar os arquivos e dados.
 - `scielo/{AAAA-MM-DD}/XML/{nomeDaRevista}` no caso da raspagem de XMls.
 
 Entretanto, se a pasta com o nome de uma revista já existir no mesmo caminho que o programa está sendo executado, só serão baixados arquivos que ainda não existem.
+
+## Como citar?
+
+É possível clicar em `Cite this repository` na aba à direita nesse repositório para acessar a citação nos formatos APA e BibTex, ou ainda acessar o [arquivo da citação](CITATION.cff) em formato `.cff`.
+
+Abaixo a citação no formato BibTex:
+
+```
+@software{Brasil_Ferramentas_Scielo_v2_2021,
+author = {Brasil, Eric and Nascimento, Leonardo and Andrade, Gabriel},
+doi = {10.5281/zenodo.5168727},
+month = {8},
+title = {{Ferramentas Scielo v2}},
+url = {https://github.com/LABHDUFBA/ferramentas_scielo_v2},
+version = {1.0.1},
+year = {2021}
+}
+```
 
 ## Licença 
 
