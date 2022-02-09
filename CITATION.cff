@@ -1,0 +1,17 @@
+cff-version: 1
+message: "Se você utilizar esse programa, por favor cite como referenciado abaixo."
+authors:
+  - family-names: Brasil
+    given-names: Eric
+    orcid: https://orcid.org/0000-0001-5067-8475
+  - family-names: Nascimento
+    given-names: Leonardo
+    orcid: https://orcid.org/0000-0003-2929-1115
+  - family-names: Andrade
+    given-names: Gabriel
+title: "Ferramentas Scielo v2"
+type: "software"
+version: 1.0.1
+doi: "https://doi.org/10.5281/zenodo.5168727"
+date-released: 2021-08-07
+url: "https://github.com/LABHDUFBA/ferramentas_scielo_v2"

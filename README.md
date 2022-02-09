@@ -1,8 +1,10 @@
 <p align="center"><img src="img/labhd.png" height="256" width="256"/></p>
 
-# ferramentas_scielo
+# Ferramentas Scielo v2 
 
-[![DOI](https://zenodo.org/badge/380107112.svg)](https://zenodo.org/badge/latestdoi/380107112) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5168728.svg)](https://doi.org/10.5281/zenodo.5168728) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
 >Esse repositório é parte dos projetos desenvolvidos pelos membros do [LABHDUFBA](http://labhd.ufba.br/) e tem como objetivo oferecer ferramentas de raspagem, organização e análise de artigos ciêntíficos publicados na plataforma [Scielo.br](https://www.scielo.br/).
 
