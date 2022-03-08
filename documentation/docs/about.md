@@ -1,8 +1,8 @@
-# Sobre a ferramenta
+## Sobre a ferramenta
 
 Essa ferramenta é parte dos projetos desenvolvidos pelos membros do [LABHDUFBA](http://labhd.ufba.br/) e tem como objetivo oferecer ferramentas de raspagem, organização e análise de artigos científicos publicados na plataforma [Scielo.br](https://www.scielo.br/).
 
-Os dados gerados por ela, assim como seus códigos, compõem o Repositório Digital das Humanidades (pt-BR), desenvolvido em parceria entre UFBA, UNILAB e UFRJ. Em sua [página](https://labhdufba.github.io/redhbr/) é possível acessar outras bases de dados, como os papers da ANPUH, COMPÓS e ANPOCS.
+Os dados gerados por ela, assim como seus códigos, compõem o **Repositório Digital das Humanidades (pt-BR)**, desenvolvido em parceria entre UFBA, UNILAB e UFRJ. Em sua [página](https://labhdufba.github.io/redhbr/) é possível acessar outras bases de dados, como os papers da ANPUH, COMPÓS e ANPOCS.
 
 ## Sobre os Autores
 
