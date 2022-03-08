@@ -3,7 +3,7 @@
 # Ferramentas Scielo v2 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5168728.svg)](https://doi.org/10.5281/zenodo.5168728) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
-Veja a documentação completa em LABHDUFBA.github.io/ferramentas-scielo-v2/
+Veja a documentação completa em https://labhdufba.github.io/ferramentas_scielo_v2/
 
 ## Índice
 - [Ferramentas Scielo v2](#ferramentas-scielo-v2)
