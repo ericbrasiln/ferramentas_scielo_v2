@@ -21,12 +21,12 @@ def main():
                     '1- Ciências Agrárias\n'
                     '2- Ciências Biológicas\n'
                     '3- Ciências da Saúde\n'
-                    '4- Ciêncas Exatas e da Terra\n'
+                    '4- Ciências Exatas e da Terra\n'
                     '5- Ciências Humanas\n'
                     '6- Ciências Sociais Aplicadas\n'
                     '7- Engenharias\n'
                     '8- Linguística, Letras e Artes\n'
-                    'Digite o número correspondete à área temática que deseja raspar: \n'))
+                    'Digite o número correspondente à área temática que deseja raspar: \n'))
         print('-='*50)
         saveMode = int(input('-=-Definição do tipo de raspagem-=-\n'
                              '1- Salvar os XMLs;\n'
