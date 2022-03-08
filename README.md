@@ -3,6 +3,8 @@
 # Ferramentas Scielo v2 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5168728.svg)](https://doi.org/10.5281/zenodo.5168728) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
+Veja a documentação completa em LABHDUFBA.github.io/ferramentas-scielo-v2/
+
 ## Índice
 - [Ferramentas Scielo v2](#ferramentas-scielo-v2)
   - [Índice](#índice)
@@ -17,7 +19,7 @@
 
 ## Introdução
 
->Esse repositório é parte dos projetos desenvolvidos pelos membros do [LABHDUFBA](http://labhd.ufba.br/) e tem como objetivo oferecer ferramentas de raspagem, organização e análise de artigos ciêntíficos publicados na plataforma [Scielo.br](https://www.scielo.br/).
+>Esse repositório é parte dos projetos desenvolvidos pelos membros do [LABHDUFBA](http://labhd.ufba.br/) e tem como objetivo oferecer ferramentas de raspagem, organização e análise de artigos científicos publicados na plataforma [Scielo.br](https://www.scielo.br/).
 
 Atualização completa para nova versão do Scielo.br
 
@@ -79,9 +81,9 @@ Após a definição do assunto, é preciso definir o tipo de raspagem:
     :warning: Devido ao volume de dados, contando dezenas de milhares de artigos, o download de todos os arquivos PDF demandará  muito tempo e uso intenso de sua máquina.
 
     
-:warning: Os arquivos XML possuem todos os metadados dos artigos, incluíndo o texto completo e as referências bibliográficas.
+:warning: Os arquivos XML possuem todos os metadados dos artigos, incluindo o texto completo e as referências bibliográficas.
 
-Após o download dos arquivos XML é posssível utilizar a ferramenta `scielo_xml_to_csv` para convertar todos os XML para um arquivo `csv`.
+Após o download dos arquivos XML é possível utilizar a ferramenta `scielo_xml_to_csv` para converter todos os XML para um arquivo `csv`.
 
 Acesse a pasta `scielo_xml_to_csv` e execute o arquivo `run.py`.
 

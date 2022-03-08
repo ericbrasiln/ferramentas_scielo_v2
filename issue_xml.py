@@ -2,11 +2,12 @@ import time, re, os
 import wget
 from reports import*
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait 
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.firefox.options import Options
+from webdriver_manager.firefox import GeckoDriverManager
+from selenium.webdriver.chrome.service import Service
 import ssl
 
 ssl._create_default_https_context = ssl._create_unverified_context
@@ -40,9 +41,13 @@ def get_issue(diretorio, link, issue_link, pasta, saveMode):
     '''
     Função para baixar o xml de cada artigo
     '''
-    chrome_options = Options()  
-    chrome_options.add_argument("--headless")  
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+    firefox_options = Options()
+    firefox_options.add_argument('-lang=pt-BR')
+    firefox_options.add_argument("--headless")
+    firefox_options.add_argument("--no-sandbox")
+    firefox_options.add_argument("--start-maximized")
+    s=Service(GeckoDriverManager().install())
+    driver = webdriver.Firefox(service=s, options=firefox_options)
     driver.get(issue_link)
     #Botão de aceitar cookies
     try:
@@ -54,14 +59,14 @@ def get_issue(diretorio, link, issue_link, pasta, saveMode):
     except:
         pass
     time.sleep(1)
-    journal = driver.find_element_by_tag_name('h1').text
-    publisher = driver.find_element_by_class_name('namePlublisher').text
+    journal = driver.find_element(By.TAG_NAME,'h1').text
+    publisher = driver.find_element(By.CLASS_NAME,'namePlublisher').text
     print(f'\n- Revista: {journal}\n- Publicação de: {publisher}\n')
-    articles_list = driver.find_element_by_class_name('articles')
-    links = articles_list.find_elements_by_class_name('links')
+    articles_list = driver.find_element(By.CLASS_NAME,'articles')
+    links = articles_list.find_elements(By.CLASS_NAME,'links')
     for article in links:
         try:
-            article_link = article.find_element_by_tag_name('a').get_attribute("href")
+            article_link = article.find_element(By.TAG_NAME,'a').get_attribute("href")
             xml_link = article_link.replace('abstract/', '')
             xml_link = re.sub("(\?[a-z]+=[a-z]+$)","?format=xml", xml_link)
             xml_name = xml_link.replace(f'{link}a','')
