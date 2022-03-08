@@ -3,8 +3,6 @@
 # Ferramentas Scielo v2 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5168728.svg)](https://doi.org/10.5281/zenodo.5168728) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
->Essa ferramenta é parte dos projetos desenvolvidos pelos membros do [LABHDUFBA](http://labhd.ufba.br/) e tem como objetivo oferecer ferramentas de raspagem, organização e análise de artigos científicos publicados na plataforma [Scielo.br](https://www.scielo.br/).
-
 No ano de 2020, desenvolvemos uma ferramenta para raspagem da base de artigos do Scielo.br. A ferramenta utilizava a biblioteca `BeautifulSoup` para coletar os dados. Entretanto, em 2021 o repositório Scielo.br passou por uma reestruturação completa.
 
 Foi necessário, consequentemente, a reconstrução da ferramenta para lidar com a nova versão do site. Agora, utilizamos o `Selenium` para acessar e raspar os dados do repositório.
@@ -54,7 +52,7 @@ Exemplo de como executar utilizando o terminal do Linux, após instalar o Python
    $ python3 scielo_v2.py
    ```
 
-### Raspagem por área de conhecimento: `scielo_v2.py`
+### Raspagem por área de conhecimento
 
 Esse script permite ao usuário selecionar qual assunto pretende raspar de acordo com a categorização estabelecida pela plataforma [Scielo.br](https://www.scielo.br/journals/thematic?status=current). 
 
@@ -89,7 +87,7 @@ Após a definição do assunto, é preciso definir o tipo de raspagem:
     
 :warning: Os arquivos XML possuem todos os metadados dos artigos, incluindo o texto completo e as referências bibliográficas.
 
-### Raspagem por revista ou por lista de revistas: `scielo_rev_v2.py`
+### Raspagem por revista ou por lista de revistas
 
 Nesse script é possível raspar uma revista ou uma lista de revistas específicas através de seu nome.
 
@@ -97,11 +95,18 @@ Possui as mesmas características do `scielo_v2.py`, porém a definição da(s) 
 
 Por exemplo, se vc pretende raspar os arquivos da revista Almanack, acesse a página inicial da revista no repositório e encontre a abreviação de seu título na URL.
 
-```
+```{.html}
 https://www.scielo.br/j/alm/
 ```
 
 Nesse caso, o abreviação do nome da revista é `alm`. Esse termo deve ser informado para o programa.
+
+```{.sh}
+-=- Definição da(s) revista(s) -=-
+
+Digite a abreviação da revista que deseja raspar: alm
+Deseja inserir outra? [S/N]
+```
 
 :warning: Atenção
 
@@ -118,4 +123,37 @@ Após o download dos arquivos XML é possível utilizar a ferramenta `scielo_xml
 
 Acesse a pasta `scielo_xml_to_csv` e execute o arquivo `run.py`.
 
-Para mais informações leia o [README.md](scielo_xml_to_csv/README.md) da ferramenta.
+Esses scripts têm como objetivos analisar, selecionar, organizar e salvar informações de um dataset de arquivos XML de todas as revistas previamente baixados em um arquivo CSV.
+
+O `run.py` acessa o diretório contendo as pastas de cada revista e analisa cada XML, inserindo os dados em um arquivo CSV salvo com o nome `metadata_{revista}.csv`. 
+
+:warning: _É preciso definir o caminho do diretório com o dataset. E a estrutura desse dataset deve conter diretórios de cada revista (ou edições) com seus arquivos XML a serem analisados._
+
+As seguintes informações são inseridas no CSV:
+
+- index,
+- file_name: nome do arquivo,
+- article_id: identificação do arquivo,
+- article_category: categoria do arquivo,
+- authors: lista de autores,
+- contact_email: e-mail do/a autor/a principal
+- authors affiliation: lista de filiações,
+- article_title: título do artigo,
+- journal_title: título do revista,
+- journal_issn: ISSN da revista,
+- journal_publisher: instituição da revista,
+- pub_date: data da publicação,
+- abstract: resumo,
+- key_words: lista de palavras-chave,
+- issue: edição,
+- num: número,
+- doi: DOI,
+- full_text: texto completo do artigo,
+- footnotes: notas de rodapé,
+- refs: lista (contendo listas) das referências bibliográficas.
+
+Em seguida, com a função `df_final()`, todos os arquivos CSV são unidos em um único *dataframe* com `Pandas` e salvos em um CSV chamado `metadata_scielo_{yyyy-mm-dd_H-M-S}.csv`.
+
+---
+
+Elementos presentes nesse repositório foram retirados de [Scielo_Journal_Metadata_Downoader](https://github.com/johnsgomez/Scielo_Journal_Metadata_Downoader), criado por [johnsgomez](https://github.com/johnsgomez)

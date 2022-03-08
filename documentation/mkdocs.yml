@@ -1,5 +1,5 @@
 site_name: ferramentas_scielo_v2
-site_url: https://LABHDUFBA.io/ferramentas_scielo_v2
+site_url: https://LABHDUFBA.github.io/ferramentas_scielo_v2
 
 theme:
   logo: img/logo.png
@@ -23,9 +23,6 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Mudar para modo noturno
-
-extra_css:
-  - stylesheets/extra.css
 
 repo_url: https://github.com/LABHDUFBA/ferramentas_scielo_v2
 repo_name: LABHDUFBA/ferramentas_scielo_v2
