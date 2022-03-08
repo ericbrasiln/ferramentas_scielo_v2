@@ -3,11 +3,11 @@
 # Ferramentas Scielo v2 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5168728.svg)](https://doi.org/10.5281/zenodo.5168728) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
-No ano de 2020, desenvolvemos uma ferramenta para raspagem da base de artigos do Scielo.br. A ferramenta utilizava a biblioteca `BeautifulSoup` para coletar os dados. Entretanto, em 2021 o repositório Scielo.br passou por uma reestruturação completa.
+No ano de 2020, desenvolvemos uma ferramenta para raspagem da base de artigos do Scielo.br. A ferramenta, escrita em Python, utilizava a biblioteca `BeautifulSoup` para coletar os dados. Entretanto, em 2021 o repositório Scielo.br passou por uma reestruturação completa.
 
 Foi necessário, consequentemente, a reconstrução da ferramenta para lidar com a nova versão do site. Agora, utilizamos o `Selenium` para acessar e raspar os dados do repositório.
 
-Com a `ferramentas_scielo_v2` é possível realizar a raspagem por área do conhecimento ou [por revista (ou uma lista de revistas)](#scielo_rev_v2py). Também é possível optar pelo tipo de raspagem: apenas XML ou XML e PDFs.
+Com a `ferramentas_scielo_v2` é possível realizar a raspagem [por área do conhecimento](https://labhdufba.github.io/ferramentas_scielo_v2/#raspagem-por-area-de-conhecimento) ou [por revista (ou uma lista de revistas)](https://labhdufba.github.io/ferramentas_scielo_v2/#raspagem-por-revista-ou-por-lista-de-revistas). Também é possível optar pelo tipo de raspagem: apenas XML ou XML e PDFs.
 
 Também disponibilizamos uma ferramenta para converter os XMLs para CSV, com o script `scielo_xml_to_csv/run.py`.
 
@@ -36,21 +36,6 @@ Agora é possível executar a ferramenta direto do prompt de comando do Windows 
 ## Utilização
 
 Na pasta da ferramenta existem dois arquivos python que permitem a execução de opções distintas de raspagem. O primeiro, `scielo_v2.py`, permite a raspagem de todas as revistas de uma determinada área do conhecimento. O segundo, `scielo_rev_v2.py`, permite a raspagem por revista ou lista de revistas específicas.
-
-Exemplo de como executar utilizando o terminal do Linux, após instalar o Python3.8:
-
-1. Acesse o diretório em que o arquivo .py está salvo:
-   ```{.sh}
-   $ cd user/local
-   ```
-2. Instale as bibliotecas requeridas:
-   ```{.sh}
-   $ pip3 install -r requirements.txt
-   ```
-3. Execute o arquivo usando Python3.8
-   ```{.sh}
-   $ python3 scielo_v2.py
-   ```
 
 ### Raspagem por área de conhecimento
 
@@ -82,7 +67,7 @@ Após a definição do assunto, é preciso definir o tipo de raspagem:
 1. Realizar a raspagem de todos os arquivos XML de todas as edições de todas as revistas da área selecionada: opção `1`;
 2. Realizar a raspagem de todos os arquivos XML e PDF de todas as edições de todas as revistas da área selecionada: opção `2`.
    
-    :warning: Devido ao volume de dados, contando dezenas de milhares de artigos, o download de todos os arquivos PDF demandará  muito tempo e uso intenso de sua máquina.
+:warning: Devido ao volume de dados, contando dezenas de milhares de artigos, o download de todos os arquivos PDF demandará  muito tempo e uso intenso de sua máquina.
 
     
 :warning: Os arquivos XML possuem todos os metadados dos artigos, incluindo o texto completo e as referências bibliográficas.
