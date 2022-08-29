@@ -1,7 +1,8 @@
 <p align="left"><img src="img/logo.png" height="256" width="256"/></p>
 
 # Ferramentas Scielo v2 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5168728.svg)](https://doi.org/10.5281/zenodo.5168728) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6336277.svg)](https://doi.org/10.5281/zenodo.6336277) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
 No ano de 2020, desenvolvemos uma ferramenta para raspagem da base de artigos do Scielo.br. A ferramenta, escrita em Python, utilizava a biblioteca `BeautifulSoup` para coletar os dados. Entretanto, em 2021 o repositório Scielo.br passou por uma reestruturação completa.
 
@@ -13,6 +14,8 @@ Também disponibilizamos uma ferramenta para converter os XMLs para CSV, com o s
 
 ## Instalação
 
+### Pré-requisitos
+
 Para executar a ferramenta é preciso clonar ou fazer download do repositório para sua máquina. Antes de executar os scripts, é preciso preparar seu computador, como mostramos abaixo.
 
 A ferramentas desse projeto foram escritas em [Python 3.8](https://www.python.org/). Portanto, para executar o arquivo .py é preciso instalar o Python3 em seu computador.
@@ -20,7 +23,7 @@ A ferramentas desse projeto foram escritas em [Python 3.8](https://www.python.or
 [Clique aqui](https://python.org.br/instalacao-windows/) para acessar um tutorial de instalação do Python no Windows, [clique aqui](https://python.org.br/instalacao-linux/) para Linux e [clique aqui](https://python.org.br/instalacao-mac/)
 para Mac.
 
-Após a instalação do Python é preciso instalar as bibliotecas necessárias para a ferramenta ser executada. Para isso, basta executar o comando `pip install -r requirements.txt` no terminal, a partir da pasta onde está o arquivo.  Para saber mais sobre instalação de bibliotecas com pip, veja essa lição do [Programming Historian](https://programminghistorian.org/pt/licoes/instalacao-modulos-python-pip).
+Após a instalação do Python é preciso instalar as bibliotecas necessárias para a ferramenta ser executada. Para isso, basta executar o comando `pip3 install -r requirements.txt` no terminal, a partir da pasta onde está o arquivo. Para saber mais sobre instalação de bibliotecas com pip, veja essa lição do [Programming Historian](https://programminghistorian.org/pt/licoes/instalacao-modulos-python-pip).
 
 1. Acesse o diretório em que o arquivo `requirements.txt` está salvo:
    ```{.sh .bash}
@@ -28,8 +31,16 @@ Após a instalação do Python é preciso instalar as bibliotecas necessárias p
    ```
 2. Instale as bibliotecas requeridas com o seguinte comando:
    ```{.python}
-   pip install -r requirements.txt
+   pip3 install -r requirements.txt
    ```
+
+#### WebDriver e Navegador
+
+Para que a ferramenta funcione, é necessário ter instalado o navegador [Mozilla Firefox](https://www.mozilla.org/pt-BR/firefox/new/). Além disso, é necessário ter instalado o WebDriver do Mozilla Firefox, GeckoDriver. 
+
+Para acessar a versão mais recente do GeckoDriver [visite o repositório do Mozilla no GitHub](https://github.com/mozilla/geckodriver/releases). É possível encontrar mais [informações oficiais aqui](https://firefox-source-docs.mozilla.org/testing/geckodriver/index.html).
+
+Para inserir o webdriver no PATH de sistemas Unix e Windows, leia essa questão no [StackOverflow](https://stackoverflow.com/questions/40208051/selenium-using-python-geckodriver-executable-needs-to-be-in-path/40208762#40208762).
 
 Agora é possível executar a ferramenta direto do prompt de comando do Windows ou pelo terminal do Linux, ou utilizar as diversas [IDE](https://pt.wikipedia.org/wiki/Ambiente_de_desenvolvimento_integrado) disponíveis.
 
@@ -44,7 +55,7 @@ Esse script permite ao usuário selecionar qual assunto pretende raspar de acord
 Para isso é preciso executar o seguinte comando, do interior da pasta onde o arquivo está localizado:
 
 ```{.sh}
-python scielo_v2.py
+python3 scielo_v2.py
 ```
 A seguinte mensagem será exibida:
 
@@ -68,7 +79,6 @@ Após a definição do assunto, é preciso definir o tipo de raspagem:
 2. Realizar a raspagem de todos os arquivos XML e PDF de todas as edições de todas as revistas da área selecionada: opção `2`.
    
 :warning: Devido ao volume de dados, contando dezenas de milhares de artigos, o download de todos os arquivos PDF demandará  muito tempo e uso intenso de sua máquina.
-
     
 :warning: Os arquivos XML possuem todos os metadados dos artigos, incluindo o texto completo e as referências bibliográficas.
 

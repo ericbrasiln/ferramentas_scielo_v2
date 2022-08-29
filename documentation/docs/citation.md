@@ -5,13 +5,18 @@
 Abaixo a citação no formato BibTex:
 
 ```{.bibtex}
-@software{Brasil_Ferramentas_Scielo_v2_2021,
-author = {Brasil, Eric and Nascimento, Leonardo and Andrade, Gabriel},
-doi = {10.5281/zenodo.5168727},
-month = {8},
-title = {{Ferramentas Scielo v2}},
-url = {https://github.com/LABHDUFBA/ferramentas_scielo_v2},
-version = {1.0.1},
-year = {2021}
+@software{brasil_eric_2021_6336277,
+  author       = {Brasil, Eric and
+                  Nascimento, Leonardo and
+                  Andrade, Gabriel},
+  title        = {Ferramentas Scielo v2},
+  month        = aug,
+  year         = 2021,
+  note         = {{Se você utilizar esse programa, por favor cite 
+                   como referenciado abaixo.}},
+  publisher    = {Zenodo},
+  version      = {1.1},
+  doi          = {10.5281/zenodo.6336277},
+  url          = {https://doi.org/10.5281/zenodo.6336277}
 }
 ```
