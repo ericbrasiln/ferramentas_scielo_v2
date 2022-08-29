@@ -4,6 +4,7 @@ from revistas import revistas
 
 timestr = time.strftime("%Y-%m-%d")
 saveMode = ''
+
 def main():
     global saveMode
     while (saveMode != 1 and saveMode != 2):
