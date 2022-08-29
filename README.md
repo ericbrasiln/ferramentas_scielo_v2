@@ -2,7 +2,7 @@
 
 # Ferramentas Scielo v2 
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6336277.svg)](https://doi.org/10.5281/zenodo.6336277) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7032159.svg)](https://doi.org/10.5281/zenodo.7032159) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
 Veja a documentação completa em https://labhdufba.github.io/ferramentas_scielo_v2/
 
@@ -174,7 +174,7 @@ Abaixo a citação no formato BibTex:
   note         = {{Se você utilizar esse programa, por favor cite 
                    como referenciado abaixo.}},
   publisher    = {Zenodo},
-  version      = {1.1},
+  version      = {2.1},
   doi          = {10.5281/zenodo.6336277},
   url          = {https://doi.org/10.5281/zenodo.6336277}
 }
