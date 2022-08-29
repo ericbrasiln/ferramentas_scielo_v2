@@ -1,3 +1,6 @@
+# scielo directory with results
+scielo/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
