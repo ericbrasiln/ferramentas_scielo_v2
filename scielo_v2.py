@@ -2,7 +2,6 @@ from revistas import revistas
 from reports import report_scrape
 import time, os
 from selenium import webdriver
-from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support.ui import WebDriverWait 
@@ -11,6 +10,7 @@ from selenium.webdriver.chrome.service import Service
 
 timestr = time.strftime("%Y-%m-%d")
 saveMode = ''
+
 def main():
     global saveMode
     while (saveMode != 1 and saveMode != 2):
@@ -43,8 +43,7 @@ def main():
         firefox_options.add_argument("--headless")
         firefox_options.add_argument("--no-sandbox")
         firefox_options.add_argument("--start-maximized")
-        s=Service(GeckoDriverManager().install())
-        driver = webdriver.Firefox(service=s, options=firefox_options)
+        driver = webdriver.Firefox(options=firefox_options)
         driver.get(url)
         #botão de aceitar cookies
         try:
@@ -53,6 +52,13 @@ def main():
             WebDriverWait(driver, 10).until(EC.element_to_be_clickable(
                 (By.XPATH, '/html/body/div[6]/a[2]')
                 )).click()
+        except:
+            pass
+        # set locale for pt: find element by xpath and try to find element by class name
+        locale_div = driver.find_element(By.XPATH, '/html/body/header/div/div/div[3]')
+        # try to find element by class name and click it if found
+        try:
+            local_pt = locale_div.find_element(By.CLASS_NAME, 'lang-pt').click()
         except:
             pass
         journal_table = driver.find_element(By.ID,'journals_table_body')

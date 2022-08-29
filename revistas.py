@@ -6,7 +6,7 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support.ui import WebDriverWait 
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
-from webdriver_manager.firefox import GeckoDriverManager
+#from webdriver_manager.firefox import GeckoDriverManager
 
 def revistas (diretorio, link, link_journal, journal_name, saveMode):
     '''
@@ -17,8 +17,9 @@ def revistas (diretorio, link, link_journal, journal_name, saveMode):
     firefox_options.add_argument("--headless")
     firefox_options.add_argument("--no-sandbox")
     firefox_options.add_argument("--start-maximized")
-    s=Service(GeckoDriverManager().install())
-    driver = webdriver.Firefox(service=s, options=firefox_options)
+    #s=Service(GeckoDriverManager().install())
+    #driver = webdriver.Firefox(service=s, options=firefox_options)
+    driver = webdriver.Firefox(options=firefox_options)
     driver.get(link_journal)
     #Botão de aceitar cookies
     try:
@@ -39,3 +40,5 @@ def revistas (diretorio, link, link_journal, journal_name, saveMode):
         issue_link = issue.get_attribute("href")
         print(f'\nLink da edição: {issue_link}')
         get_issue(diretorio, link, issue_link, pasta, saveMode)
+    # Fechando o navegador
+    driver.quit()

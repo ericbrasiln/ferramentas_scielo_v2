@@ -6,7 +6,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait 
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.firefox.options import Options
-from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.chrome.service import Service
 import ssl
 
@@ -46,8 +45,7 @@ def get_issue(diretorio, link, issue_link, pasta, saveMode):
     firefox_options.add_argument("--headless")
     firefox_options.add_argument("--no-sandbox")
     firefox_options.add_argument("--start-maximized")
-    s=Service(GeckoDriverManager().install())
-    driver = webdriver.Firefox(service=s, options=firefox_options)
+    driver = webdriver.Firefox(options=firefox_options)
     driver.get(issue_link)
     #Botão de aceitar cookies
     try:
@@ -59,40 +57,47 @@ def get_issue(diretorio, link, issue_link, pasta, saveMode):
     except:
         pass
     time.sleep(1)
-    journal = driver.find_element(By.TAG_NAME,'h1').text
-    publisher = driver.find_element(By.CLASS_NAME,'namePlublisher').text
-    print(f'\n- Revista: {journal}\n- Publicação de: {publisher}\n')
-    articles_list = driver.find_element(By.CLASS_NAME,'articles')
-    links = articles_list.find_elements(By.CLASS_NAME,'links')
-    for article in links:
-        try:
-            article_link = article.find_element(By.TAG_NAME,'a').get_attribute("href")
-            xml_link = article_link.replace('abstract/', '')
-            xml_link = re.sub("(\?[a-z]+=[a-z]+$)","?format=xml", xml_link)
-            xml_name = xml_link.replace(f'{link}a','')
-            alterar = re.sub(r"[(:\(\)<>?/\\|@+)]", "", xml_name)
-            full_name = re.sub(r"\s+", "_", alterar)
-            full_name = full_name.replace("format=xml",'.xml')
-            path_org = os. path. join(diretorio, 'XML')
-            path_final = os.path.join(path_org, pasta)
-            if not os.path.exists(path_final):
-                os.makedirs(path_final)
-            out_xml = os.path.join(path_final, full_name)
-            if not os.path.exists(out_xml):
-                try:
-                    wget.download(xml_link, out_xml)
-                except Exception as e:
-                    print(f'Erro: {e}')
-                    error_xml_list.append(xml_link)
-            else:
-                print('\nXML já existe.')
-            if saveMode == 2:
-                get_pdf(diretorio, xml_link, link, pasta, error_pdf_list)
-            else:
-                pass
-        except:
-            print('\nsem link')
-    if len(error_xml_list)!=0:
-        report_erro (path_final, error_xml_list, saveMode)
-    if len(error_pdf_list)!=0:    
-        report_erro_pdf(pasta, error_pdf_list,saveMode)
+    #try to find h1 tag, if not, pass
+    try:
+        journal = driver.find_element(By.TAG_NAME,'h1').text
+        publisher = driver.find_element(By.CLASS_NAME,'namePlublisher').text
+        print(f'\n- Revista: {journal}\n- Publicação de: {publisher}\n')
+        articles_list = driver.find_element(By.CLASS_NAME,'articles')
+        links = articles_list.find_elements(By.CLASS_NAME,'links')
+        for article in links:
+            try:
+                article_link = article.find_element(By.TAG_NAME,'a').get_attribute("href")
+                xml_link = article_link.replace('abstract/', '')
+                xml_link = re.sub("(\?[a-z]+=[a-z]+$)","?format=xml", xml_link)
+                xml_name = xml_link.replace(f'{link}a','')
+                alterar = re.sub(r"[(:\(\)<>?/\\|@+)]", "", xml_name)
+                full_name = re.sub(r"\s+", "_", alterar)
+                full_name = full_name.replace("format=xml",'.xml')
+                path_org = os. path. join(diretorio, 'XML')
+                path_final = os.path.join(path_org, pasta)
+                if not os.path.exists(path_final):
+                    os.makedirs(path_final)
+                out_xml = os.path.join(path_final, full_name)
+                if not os.path.exists(out_xml):
+                    try:
+                        wget.download(xml_link, out_xml)
+                    except Exception as e:
+                        print(f'Erro: {e}')
+                        error_xml_list.append(xml_link)
+                else:
+                    print('\nXML já existe.')
+                if saveMode == 2:
+                    get_pdf(diretorio, xml_link, link, pasta, error_pdf_list)
+                else:
+                    pass
+            except:
+                print('\nsem link')
+        if len(error_xml_list)!=0:
+            report_erro (path_final, error_xml_list, saveMode)
+        if len(error_pdf_list)!=0:    
+            report_erro_pdf(pasta, error_pdf_list,saveMode)
+    except:
+        print(f'\nNão foi possível encontrar dados para {issue_link}')
+    # Fechando o navegador
+    driver.quit()
+
