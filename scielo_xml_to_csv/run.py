@@ -53,7 +53,7 @@ with os.scandir(datasetXML) as pastas:
                 for entry in entries:
                     print(f'Arquivo: {entry}\n')
                     # Abrir e analisar cada XML
-                    with open(entry, "r", encoding="UTF8") as file: 
+                    with open(entry, "r", encoding="latin-1") as file: 
                         soup = BeautifulSoup(file, "html.parser")
                         file_name.append(entry.name)
                         # Executa as funções de coleta das informações e insere
@@ -77,7 +77,7 @@ with os.scandir(datasetXML) as pastas:
                         refs.append(get_refs(soup))
                         footnotes.append(get_fn(soup))
             # Dicionário com os itens que serão armazenados no dataframe
-            data = {"file_name": file_name, "article_id": article_id, "article_category": category, "authors":authors, "contact_email": email, "authors affiliation": authors_aff,"article_title":article_title, "journal_title": journal_title, "journal_issn": journal_issn, "journal_publisher":journal_publisher,"pub_date": pub_date, "abstract": abstract,"key_words":key_words, "issue":issue, "num":num, "doi": doi, "full_text": text, "footnotes": footnotes, 'refs': refs}
+            data = {"file_name": file_name, "article_id": article_id, "article_category": category, "authors": authors, "contact_email": email, "authors_affiliation": authors_aff, "article_title": article_title, "journal_title": journal_title, "journal_issn": journal_issn, "journal_publisher": journal_publisher, "pub_date": pub_date, "abstract": abstract,"key_words": key_words, "issue": issue, "num": num, "doi": doi, "full_text": text, "footnotes": footnotes, 'refs': refs}
             # Criação do dataframe
             df = pd.DataFrame.from_dict(data, orient='index')
             df = df.transpose()
