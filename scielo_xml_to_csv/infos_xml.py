@@ -58,12 +58,11 @@ def find_authors_aff(soup):
         authors_aff = 'None'
         return(authors_aff)
   
-def find_pub_date(soup):
+def find_pub_date(soup): # Por falta de padronização na base Scielo, não é interessante incluir nesta coluna outras informações além do ano
     try:
-        month = soup.front.find("pub-date").contents[3].string
-        year = soup.front.find("pub-date").contents[5].string
-        date = [year,month] # Cria lista com ano e mês da públicação
-        return('-'.join(date)) # Separa ano e mês com "-"
+        find_year = soup.front.find("pub-date")
+        year = find_year.find("year")
+        return (year.string)
     except:
         date = "None"
         return(date)
