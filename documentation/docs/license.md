@@ -1,6 +1,6 @@
 # MIT License
 
-Copyright (c) 2021 Eric Brasil and Leonardo Nascimento and Gabriel Andrade
+Copyright (c) 2022 Eric Brasil and Leonardo Nascimento and Gabriel Andrade and Jorge Barbosa
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -29,7 +29,7 @@ As seguintes informações são inseridas no CSV:
 - journal_title: título do revista,
 - journal_issn: ISSN da revista,
 - journal_publisher: instituição da revista,
-- pub_date: data da publicação,
+- pub_date: ano da publicação,
 - abstract: resumo,
 - key_words: lista de palavras-chave,
 - issue: edição,
@@ -53,3 +53,4 @@ Elementos presentes nesse repositório foram retirados de [Scielo_Journal_Metada
 [MIT Licence](../LICENSE)
 
 2021 [Eric Brasil (IHL/UNILAB, LABHDUFBA)](https://github.com/ericbrasiln), [Gabriel Andrade (UFBA, LABHDUFBA)](https://github.com/gabrielsandrade), [Leonardo Nascimento (UFBA, LABHDUFBA)](https://github.com/leofn)
+[Jorge Barbosa (PPGCS/UFBA, LABHDUFBA)](https://github.com/jhsbarbosa)
