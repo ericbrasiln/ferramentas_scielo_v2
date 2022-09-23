@@ -141,7 +141,7 @@ As seguintes informações são inseridas no CSV:
 - journal_title: título do revista,
 - journal_issn: ISSN da revista,
 - journal_publisher: instituição da revista,
-- pub_date: data da publicação,
+- pub_date: ano da publicação,
 - abstract: resumo,
 - key_words: lista de palavras-chave,
 - issue: edição,
@@ -164,19 +164,20 @@ Elementos presentes nesse repositório foram retirados de [Scielo_Journal_Metada
 Abaixo a citação no formato BibTex:
 
 ```
-@software{brasil_eric_2021_6336277,
+@software{brasil_eric_2022_5168727,
   author       = {Brasil, Eric and
                   Nascimento, Leonardo and
-                  Andrade, Gabriel},
+                  Andrade, Gabriel and
+                  Barbosa, Jorge},
   title        = {Ferramentas Scielo v2},
-  month        = aug,
-  year         = 2021,
+  month        = sep,
+  year         = 2022,
   note         = {{Se você utilizar esse programa, por favor cite 
                    como referenciado abaixo.}},
   publisher    = {Zenodo},
-  version      = {2.1},
-  doi          = {10.5281/zenodo.6336277},
-  url          = {https://doi.org/10.5281/zenodo.6336277}
+  version      = {2.2},
+  doi          = {10.5281/zenodo.5168727},
+  url          = {https://doi.org/10.5281/zenodo.5168727}
 }
 ```
 
@@ -185,3 +186,4 @@ Abaixo a citação no formato BibTex:
 [MIT Licence](LICENSE)
 
 2021 [Eric Brasil (IHL/UNILAB, LABHDUFBA)](https://github.com/ericbrasiln), [Gabriel Andrade (UFBA, LABHDUFBA)](https://github.com/gabrielsandrade), [Leonardo Nascimento (UFBA, LABHDUFBA)](https://github.com/leofn)
+[Jorge Barbosa (PPGCS/UFBA, LABHDUFBA)](https://github.com/jhsbarbosa)
