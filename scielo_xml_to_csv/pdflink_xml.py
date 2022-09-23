@@ -1,4 +1,3 @@
-import os
 import re
 from xml.etree import ElementTree as ET
 
