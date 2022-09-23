@@ -23,3 +23,7 @@ Editor do *Programming Historian* em português. Pesquisador do Laboratório de 
 Graduando no curso de Bacharelado em Engenharia de Computação da Escola Politécnica da Universidade Federal da Bahia (UFBA)
 
 É desenvolvedor de software e membro do Laboratório de Humanidades Digitais da Universidade Federal da Bahia (LABHDUFBA).
+
+[Jorge Barbosa (PPGCS/UFBA, LABHDUFBA)](https://github.com/jhsbarbosa)
+
+Doutorando em Ciências Sociais no PPGCS-UFBA e membro do Laboratório de Humanidades Digitais da UFBA.
