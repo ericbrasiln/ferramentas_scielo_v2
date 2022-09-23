@@ -51,9 +51,8 @@ with os.scandir(datasetXML) as pastas:
             #Iteração em cada arquivo XML de cada diretório de revista
             with os.scandir(xml_dir) as entries:
                 for entry in entries:
-                    print(f'Arquivo: {entry}\n')
                     # Abrir e analisar cada XML
-                    with open(entry, "r", encoding="latin-1") as file: 
+                    with open(entry, "r", encoding="utf-8") as file: 
                         soup = BeautifulSoup(file, "html.parser")
                         file_name.append(entry.name)
                         # Executa as funções de coleta das informações e insere
@@ -84,7 +83,7 @@ with os.scandir(datasetXML) as pastas:
             # Salvar o CSV
             csv_file = os.path.join(datasetCSV, f"metadata_{revista}.csv" ) #definir nome do csv
             df.to_csv(csv_file)
-        # Se o CSV já exitir na pasta, o programa retorna mensagem e passa para o
+        # Se o CSV já existir na pasta, o programa retorna mensagem e passa para o
         # próximo diretório
         else:
             print(f'CSV da revista {revista} já existe.\n')
