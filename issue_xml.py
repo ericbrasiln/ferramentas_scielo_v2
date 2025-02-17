@@ -61,8 +61,9 @@ def get_issue(diretorio, link, issue_link, pasta, saveMode):
         journal = driver.find_element(By.TAG_NAME,'h1').text
         publisher = driver.find_element(By.CLASS_NAME,'namePlublisher').text
         print(f'\n- Revista: {journal}\n- Publicação de: {publisher}\n')
-        articles_list = driver.find_element(By.CLASS_NAME,'articles')
-        links = articles_list.find_elements(By.CLASS_NAME,'links')
+        table = driver.find_element(By.CLASS_NAME,'table')
+        tbody = table.find_element(By.TAG_NAME,'tbody')
+        links = tbody.find_elements(By.TAG_NAME,'tr')
         for article in links:
             try:
                 article_link = article.find_element(By.TAG_NAME,'a').get_attribute("href")
@@ -71,7 +72,13 @@ def get_issue(diretorio, link, issue_link, pasta, saveMode):
                 xml_name = xml_link.replace(f'{link}a','')
                 alterar = re.sub(r"[(:\(\)<>?/\\|@+)]", "", xml_name)
                 full_name = re.sub(r"\s+", "_", alterar)
-                full_name = full_name.replace("format=xml",'.xml')
+                if 'format=xml' not in full_name:
+                    if (full_name.endswith('.')):
+                        full_name = full_name + 'xml'
+                    else:
+                        full_name = full_name + '.xml'
+                else :
+                    full_name = full_name.replace("format=xml",'.xml')
                 path_org = os. path. join(diretorio, 'XML')
                 path_final = os.path.join(path_org, pasta)
                 if not os.path.exists(path_final):
@@ -95,7 +102,8 @@ def get_issue(diretorio, link, issue_link, pasta, saveMode):
             report_erro (path_final, error_xml_list, saveMode)
         if len(error_pdf_list)!=0:    
             report_erro_pdf(pasta, error_pdf_list,saveMode)
-    except:
+    except Exception as e:
+        print(f'\nErro: {e}')
         print(f'\nNão foi possível encontrar dados para {issue_link}')
     # Fechando o navegador
     driver.quit()
