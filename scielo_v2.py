@@ -63,7 +63,7 @@ def main():
         journal_table = driver.find_element(By.ID,'journals_table_body')
         tematica = journal_table.find_element(By.ID,f"heading-{area}")
         print(f'\n-=-{tematica.text}-=-')
-        btn = tematica.find_element(By.TAG_NAME,'a').click()
+        btn = tematica.find_element(By.XPATH, 'following-sibling::div').find_element(By.TAG_NAME, 'table')
         time.sleep(1)
         area_box = driver.find_element(By.ID,f'collapseContent-{area}')
         journal_list = area_box.find_elements(By.CLASS_NAME,'collectionLink ')
